@@ -1,0 +1,32 @@
+[project]
+name = "agentguard-intelligence"
+version = "0.1.0"
+description = "Hosted LangGraph, PydanticAI, LlamaIndex, DSPy, and Phoenix service for AgentGuard"
+requires-python = ">=3.11"
+dependencies = [
+  "fastapi>=0.115,<1",
+  "uvicorn[standard]>=0.34,<1",
+  "pydantic-settings>=2.8,<3",
+  "pydantic-ai-slim[openai]>=1.0,<2",
+  "langgraph>=1.0,<2",
+  "langgraph-checkpoint-postgres>=3.0,<4",
+  "psycopg[binary,pool]>=3.2,<4",
+  "llama-index-core>=0.13,<1",
+  "llama-index-vector-stores-qdrant>=0.8,<1",
+  "llama-index-embeddings-openai>=0.5,<1",
+  "qdrant-client>=1.15,<2",
+  "dspy>=3.0,<4",
+  "arize-phoenix-otel>=0.16,<1",
+  "opentelemetry-api>=1.36,<2",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.3,<9", "httpx>=0.28,<1", "ruff>=0.11,<1"]
+
+[tool.ruff]
+line-length = 110
+target-version = "py311"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+
