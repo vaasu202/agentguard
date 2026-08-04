@@ -6,8 +6,6 @@ Runtime security for AI agents. AgentGuard intercepts tool calls at an MCP bound
 
 The application boots with a complete deterministic attack demo and **zero credentials**. Live adapters activate only when their hosted-service environment variables are present. AgentGuard never downloads a model and has no Ollama or local-vLLM fallback.
 
-## Why this is a strong portfolio project
-
 This is not a chatbot wrapper. It demonstrates agent security, protocol design, streaming UX, policy engineering, human-in-the-loop execution, multi-runtime architecture, observability, retrieval, evaluation, and hosted deployment.
 
 Four attack fixtures prove four distinct controls:
@@ -70,14 +68,4 @@ docs/                            Architecture, threat model, demo, credentials
 ```
 
 For the live architecture, see [Architecture](docs/ARCHITECTURE.md). For the exact optional keys and their destinations, see [Credentials](docs/CREDENTIALS.md). For interview delivery, use the [90-second demo script](docs/DEMO.md).
-
-## Resume bullets
-
-- Built a zero-trust runtime security gateway for AI agents that intercepts MCP tool calls, enforces provenance-aware `allow/redact/approval/block` policies, and prevents unsafe execution across four agent frameworks.
-- Architected hosted-only inference across OpenAI Responses/Agents, Vercel AI SDK, LiteLLM, and remote vLLM, with LangGraph orchestration and PydanticAI structured security verdicts.
-- Implemented pgvector/Qdrant security memory, LlamaIndex retrieval, DSPy optimization, Phoenix/OpenTelemetry tracing, human approval checkpoints, and a SHA-256 tamper-evident audit chain.
-
-## Security posture
-
-AgentGuard is a portfolio-grade reference implementation, not a substitute for a full production authorization system. Before production use, connect enterprise identity, store approval state durably, sign policy bundles, add tenancy isolation, and run the threat-model validation suite described in [Threat model](docs/THREAT_MODEL.md).
 
